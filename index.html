@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Aclonica&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=MedievalSharp&display=swap" rel="stylesheet">
+    <title>What is Meta?</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 title">
+                <h1></h1>
+                <button id="begin">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 disclaimer hidden">
+                <p>This game is still a work in progress, please bear with me.<span id="cursor"><strong>|</strong></span></p>
+                <button onclick="reset()">No thank you</button>
+                <button onclick="next()">I want to continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 prologue hidden">
+                <div id="progressbar">
+                    <div id="bar"></div>
+                </div>
+
+                <p id="companyinfo">Macrosoft Windoors [ Version 8.2.13769.247 ]
+                    &copy; ???? Macrosoft Corporation All Rights Reserved</p>
+
+                <p class="loadingText hidden">Loading Completed</p>
+
+                <p id="">C:\Users\playername><span id="cursor"><strong>_</strong></span></p>
+                <button class="continue hidden" onclick="mainRoom()">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content story hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="dialogue_box">
+                        
+                        <img src="../secondeval/media/village.png" alt="">
+
+                        <p>You are a young villager from the kingdom of Cod'Cadamie, a little kingdom of about 90 people. You were granted an ancient relic to combat the evil wizard, Mulkaan who has been recently attacking your kingdom. Out of all the villagers the relic only seemed to have a connection to you, so it is your duty to go forth and defeat the evil wizard. You leave your home behind, and as you leave the other villagers say their goodbyes as you leave, heading north to the home of the wizard.</p>
+
+                        <button onclick="journeyStart()">Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 journeyStart hidden">
+                    
+                    <img src="media/nearbyforest.png" alt="">
+
+                    <p>It doesn't take you long to go deep into the forest, the sounds of birds chirping in the distance and the scenery relaxes you. You feel like you can be here forever, but then you hear something completely unnatural, a wet slushing sound. You ready yourself for wherever it may be, you see the slime show itself, sloshing forward towards you to attack.</p>
+                    
+                    <button onclick="fight()">FIGHT!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 firstFight hidden">
+
+                    <p id="enemyHP"></p>
+                    <img src="media/slime.png" class="boss" alt="">
+
+                    <div class="row fightHUD hidden">
+                        <div class="col-xs-3 char-hp">
+                        </div>
+
+                        <div class="col-xs-3" id="attack-button">
+                            <img src="media/attack.png" onclick="melee()" alt="">
+                            <p>Attack</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 battleLog">
+                        <p id="battleInfo"></p>
+                    </div>
+
+                    <button class="nextscene hidden" onclick="exposition()">Continue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 interlude hidden">
+                
+                <img src="media/activerelic.png" alt="">
+                <p id="playeractions">After a long fought battle, you fall forward to catch your breath. When suddenly you hear an unnatural voice close to you.</p>
+
+                <p id="relic">Hey there buddy, pretty close call huh? I'm sorry I didn't help you earlier, I was in sleep mode. Need to conserve my life and all. I'll try to make this short and simple for you. I was a powerful tool that the wizard, Mulkaan used before. There is this thing called the Source that powers me up, Mulkaan is loaded with the stuff and practically radiates with it, so I'll be here with you from now on. I know it's a lot to take in. Do you want me to repeat it again?</p>
+
+                <button id="moreExpo" onclick="reload()">Yes</button> <button id="toDungeon" onclick="mainTower()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 dungeon hidden">
+                    <img src="media/dungeon.png" class="dungeonImg"alt="">
+                    <img src="media/youhavedied.png" class="died hidden" alt="">
+                    <img src="media/smartguy.png" class="smartguy hidden" alt="">
+
+                    <p id="relic">Okay, we need to be careful. He probably has traps set up all over the place. Which wing do you want to go to first?</p>
+
+                    <p id="tinkerer"></p>
+
+                    <p id="info">With this new information in mind, you press forward to the wizard's castle. The door of which was opened for some reason.</p>
+
+                    <button class="activate hidden" onclick="activate()">Continue</button>
+
+                    <button id="eastWing" onclick="goEast()">East Wing</button>
+
+                    <button id="westWing" onclick="goWest()">West Wing</button>
+
+                    <button id="northWing" onclick="goNorth()">North Wing</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 setUp hidden">
+                    <img src="media/youhavedied.png" class="ded hidden" alt="">
+
+                    <p id="villain"></p>
+                    <p id="command"></p>
+
+                    <button id="endThis" onclick="endThis()">FIGHT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 finalBattle hidden">
+                    <p id="mulkaanHP"></p>
+                    <img src="media/mulkaan.png" class="villain hidden" alt="">
+                    <img src="media/youhavedied.png" class="dedd hidden" alt="">
+                    <button class="respite hidden" onclick="decision()">Continue</button>
+                    <div class="row battleHUD hidden">
+                        <div class="col-xs-3 player-hp">
+                        </div>
+
+                        <div class="col-xs-3" id="magic-button">
+                            <img src="media/magic.png" onclick="Source()" alt="">
+                            <p>Magic</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 warLog">
+                        <p id="warInfo"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 endings hidden">
+                    <p id="choice"></p>
+                    <img src="media/willage.jpg" class="evilending hidden" alt="">
+                    <img src="media/tobefree.jpg" class="goodending hidden" alt="">
+                    <p id="windmills"></p>
+
+                    <button id="badguy" onclick="embrace()">Embrace</button>
+
+                    <button id="goodytwoshoes" onclick="resist()">Resist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

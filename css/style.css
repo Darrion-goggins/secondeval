@@ -1,0 +1,146 @@
+body {
+    background-image: url(../media/titleimage.png);
+    background-size: cover;
+}
+
+#begin {
+    background: #1F331B;
+    font-family: 'Aclonica', sans-serif;
+    padding: 25px;
+}
+
+button {
+    margin-top: 40px;
+    background: #0D0D0D;
+    color: #f5f5dc;
+}
+button:focus {outline:0;}
+
+.title h1{
+    text-align: center;
+    color: #f5f5dc;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    visibility: visible;
+    font-family: 'Aclonica', sans-serif;
+}
+
+.disclaimer {
+    background: #0D0D0D;
+    color: #f5f5dc;
+    font-family: 'VT323', monospace;
+    font-size: 32px;
+    padding: 100px;
+}
+
+.prologue {
+    background: #0D0D0D;
+    font-family: 'Aclonica', sans-serif;
+    color: #f5f5dc;
+    padding: 100px;
+}
+
+.prologue p {
+    margin-top: 40px;
+}
+
+#progressbar {
+    background: #0D0D0D;
+    width: 100%;
+}
+
+#bar {
+    width: 1%;
+    height: 30px;
+    background: #f5f5dc;
+}
+
+#companyinfo {
+    animation: info 6s steps(60, end);
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+#cursor {
+    animation: flash 2s infinite;
+}
+
+.content {
+    background: #0D0D0D;
+    color: #f5f5dc;
+    font-family: 'Aclonica', sans-serif;
+    font-size: 24px;
+}
+
+.content button {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.content p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.firstFight img {
+    margin-top: 20px;
+}
+
+.fightHUD {
+    margin-top: 20px;
+    border-top: thin solid #f5f5dc;
+}
+
+.fightHUD img {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.battleHUD {
+    margin-top: 20px;
+    border-top: thin solid #f5f5dc;
+}
+
+#relic {
+    color: #00FF00;
+    font-family: 'VT323', monospace;
+}
+
+#tinkerer {
+    color: #D4AF37;
+    font-family: 'MedievalSharp', cursive;
+}
+
+#villain {
+    color: #FF1F1F;
+    font-family: 'MedievalSharp', cursive;
+}
+/* Keyframes Animation */
+@keyframes flash {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes info {
+    from{width: 0}
+    100%{
+        width: 100%
+    }
+}
